@@ -1,0 +1,204 @@
+/* Root variables for consistent theming */
+:root {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --primary-text: #ffffff;
+  --secondary-text: #b3b3b3;
+  --highlight: #1e40af;
+  --hover-bg: #2a2a2a;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --value-highlight: #00ffcc;
+}
+
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: var(--secondary-bg);
+  padding: 1.25rem;
+  margin: 0 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--secondary-bg);
+  color: var(--secondary-text);
+  transition: all 0.3s ease;
+  border: 1px solid var(--highlight);
+}
+
+.tab.active {
+  background: var(--highlight);
+  color: var(--primary-text);
+  position: relative;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--highlight);
+}
+
+
+
+
+.tab button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+  font-weight: inherit;
+}
+
+
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.strategy {
+  background: var(--secondary-bg);
+  padding: 0.9375rem;
+  border-radius: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.strategy:hover {
+  transform: scale(1.02);
+  background: var(--hover-bg);
+}
+
+select {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--highlight);
+  background: var(--secondary-bg);
+  color: var(--primary-text);
+  font-size: 1rem;
+  margin-bottom: 0.9375rem;
+  cursor: pointer;
+  appearance: none;
+}
+
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.values-list-date {
+  list-style: none;
+  padding: 0 0 0 1rem;
+  margin: 0;
+}
+
+.values-item {
+  display: flex;
+  justify-content: space-between;
+  background: var(--hover-bg);
+  padding: 0.75rem 0.9375rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-text);
+  text-align: left;
+  transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+
+.values-item:hover {
+  background: var(--highlight);
+  transform: scale(1.03);
+}
+
+
+
+.arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.count {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--value-highlight);
+  font-weight: normal;
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    width: 95%;
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .tab {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+
+  .strategy {
+    padding: 0.625rem;
+  }
+
+  .values-item {
+    font-size: 0.875rem;
+    padding: 0.625rem;
+  }
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
