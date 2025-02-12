@@ -40,7 +40,7 @@ export const RenderContent = ({ item }) => {
         </div>
       ) : (
         <div className="no-strategies">
-          <p>No data available for <span>{selectedDate?.replace(/-/g, " ")}</span></p>
+          <p>No strategies available for <span>{selectedDate?.replace(/-/g, " ")}</span></p>
         </div>
       )}
     </div>
