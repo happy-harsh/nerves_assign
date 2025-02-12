@@ -8,7 +8,6 @@ export const RenderContent = ({ item }) => {
 
   return (
     <div>
-
       <div 
         className={`values-item ${isOpen ? "active" : ""}`} 
         onClick={() => setIsOpen(!isOpen)}
@@ -16,8 +15,6 @@ export const RenderContent = ({ item }) => {
         {selectedDate?.replace(/-/g, " ")}
         <span className={`arrow ${isOpen ? "rotate" : ""}`}>&#9662;</span>
       </div>
-
-
       {isOpen && (
         <div className="values-list-date">
           {dateArray.map((date, index) => (

@@ -9,8 +9,6 @@ export const RenderValues = ({ values }) => {
 
   const uniqueValues = Object.entries(valueCount);
 
-
-
   return (
     <div className="values-container">
       <ul className="values-list">
