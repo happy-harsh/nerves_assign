@@ -1,14 +1,15 @@
 import React from "react";
 
 export const RenderValues = ({ values }) => {
-  // Count occurrences of each value
+
   const valueCount = values.reduce((acc, item) => {
     acc[item] = (acc[item] || 0) + 1;
     return acc;
   }, {});
 
-  // Convert object to array for rendering
   const uniqueValues = Object.entries(valueCount);
+
+
 
   return (
     <div className="values-container">

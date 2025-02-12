@@ -89,6 +89,7 @@ body {
 }
 
 
+
 .strategy-list {
   display: flex;
   flex-direction: column;
@@ -123,6 +124,25 @@ select {
   margin-bottom: 0.9375rem;
   cursor: pointer;
   appearance: none;
+}
+
+.no-strategies {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  background: var(--secondary-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--highlight);
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.no-strategies span {
+  color: var(--highlight);
+  font-weight: bold;
 }
 
 
