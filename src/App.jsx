@@ -5,6 +5,9 @@ import { RenderContent } from "./RenderContent";
 function App() {
   const [currentView, setCurrentView] = useState("Bullish");
 
+
+
+
   return (
     <div className="container">
       <div className="tabs">
@@ -21,9 +24,11 @@ function App() {
 
       {strategyArray.map((elem) =>
         elem.View === currentView ? (
-          <RenderContent key={elem.View} item={elem.Value} />
+          <RenderContent key={elem.View} item={elem.Value} view={elem.View} />
         ) : null
       )}
+      {/* <h1>{counter}</h1>
+      <button onClick={handleClick}>Reset</button> */}
     </div>
   );
 }

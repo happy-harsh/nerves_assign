@@ -2,9 +2,12 @@ import { useState } from "react";
 import { RenderValues } from "./RenderValues";
 import { dateArray } from "./constant/data";
 
-export const RenderContent = ({ item }) => {
+export const RenderContent = ({ item, view }) => {
   const [selectedDate, setSelectedDate] = useState(dateArray.length > 0 ? dateArray[0] : null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isCheck, setIsCheck] = useState(false);
+
+
 
   return (
     <div>
@@ -18,6 +21,9 @@ export const RenderContent = ({ item }) => {
       {isOpen && (
         <div className="values-list-date">
           {dateArray.map((date, index) => (
+            <>
+            {/* <input type="checkbox" checked={isCheck} onChange={handleCheck(date)}/> */}
+            
             <div
               key={index}
               className={`values-item ${selectedDate === date ? "active" : ""}`}
@@ -28,6 +34,7 @@ export const RenderContent = ({ item }) => {
             >
               {date.replace(/-/g, " ")}
             </div>
+            </>
           ))}
         </div>
       )}
@@ -37,7 +44,7 @@ export const RenderContent = ({ item }) => {
         </div>
       ) : (
         <div className="no-strategies">
-          <p>No strategies available for <span>{selectedDate?.replace(/-/g, " ")}</span></p>
+          <p>No strategies available for <span>{selectedDate?.replace(/-/g, " ")}</span> {view}</p>
         </div>
       )}
     </div>
